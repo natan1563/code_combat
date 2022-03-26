@@ -1,4 +1,6 @@
 const UserModel = require('../Database/Table/User')
+const bcrypt = require('bcrypt')
+
 
 module.exports = {
     async list() {
@@ -10,6 +12,11 @@ module.exports = {
     },
 
     async create(userData) {
+        const password = userData.password
+
+        if (!password) 
+            throw new Error('Please fill the password')
+        
         const createdUser =  await UserModel.create(userData)
         const responseData = await this.getById(createdUser.id)
         responseData.password = undefined

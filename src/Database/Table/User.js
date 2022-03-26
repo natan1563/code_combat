@@ -4,7 +4,7 @@ const instance = require('../CodeCombat')
 const columns = {
     id: {
         type: DataTypes.INTEGER,
-        autoIncriment: true,
+        autoIncrement: true,
         primaryKey: true
     },
 

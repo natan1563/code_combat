@@ -4,7 +4,7 @@ const instance = require('../CodeCombat')
 const columns = {
     id: {
         type: DataTypes.INTEGER,
-        autoIncriment: true,
+        autoIncrement: true,
         primaryKey: true
     },
     file: {
@@ -13,9 +13,9 @@ const columns = {
     },
 
     status: {
-        type: DataTypes.ENUM(["Y", "N"]),
+        type: DataTypes.ENUM(["1", "0"]),
         allowNull: false,
-        defaultValue: "Y"
+        defaultValue: "1"
     },
 
     date_from: {

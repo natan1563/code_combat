@@ -15,5 +15,13 @@ module.exports = {
         responseData.password = undefined
         
         return responseData
+    },
+
+    async update(id, data){
+        await UserModel.update(data, { where: { id } })
+    },
+
+    async delete(id){
+        await UserModel.destroy({ where: { id } })
     }
 }
